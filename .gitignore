@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# PyCharm
+.idea/
+*.iml
+
+# Outputs
+results/
+!results/demo/
+!results/demo/**
+checkpoints/
+logs/
+tmp/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

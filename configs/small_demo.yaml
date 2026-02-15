@@ -1,0 +1,44 @@
+experiment_name: abr_small_demo
+seed: 7
+
+video:
+  segment_duration_s: 4.0
+  total_segments: 24
+  initial_buffer_s: 8.0
+  max_buffer_s: 32.0
+  network_overhead: 1.05
+  bitrate_kbps: [300, 750, 1200, 1850, 2850, 4300]
+  history_length: 8
+  request_rtt_ms: 80.0
+  content_profile: mixed
+  content_variability: 0.16
+  content_seed: 11
+
+reward:
+  rebuffer_penalty: 4.3
+  smoothness_penalty: 1.0
+
+training:
+  total_timesteps: 256
+  timesteps_per_batch: 32
+  update_epochs: 1
+  minibatch_size: 32
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  learning_rate: 0.0003
+  value_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+  hidden_dim: 128
+  checkpoint_every_updates: 2
+  trace_sampling: round_robin
+
+data:
+  train_dir: data/traces/synthetic_train
+  val_dir: data/traces/synthetic_test
+  eval_dir: data/traces/synthetic_test
+  recursive: false
+
+output:
+  run_dir: results/demo

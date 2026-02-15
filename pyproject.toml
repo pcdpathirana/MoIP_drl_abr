@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drl-abr-pycharm-vm"
+version = "0.2.0"
+description = "Professional Deep Reinforcement Learning based Adaptive Bitrate project for PyCharm and Ubuntu VM deployment"
+authors = [{name = "OpenAI project scaffold"}]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "plotly>=5.20",
+    "PyYAML>=6.0",
+    "torch>=2.0",
+    "gymnasium>=0.29",
+    "streamlit>=1.35",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
